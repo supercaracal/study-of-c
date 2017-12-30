@@ -4,7 +4,7 @@
 #include <string.h>
 
 static int get_opt_line(int argc, char *argv[]);
-static int do_cat(int n);
+static int do_tail(int n);
 
 #define DEFAULT_N_LINE 10
 #define MAX_LINE_LENGTH 1024
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     exit(1);
   }
 
-  int ret = do_cat(n);
+  int ret = do_tail(n);
   exit(ret);
 }
 
@@ -38,7 +38,7 @@ static int get_opt_line(int argc, char *argv[])
   return n;
 }
 
-static int do_cat(int n)
+static int do_tail(int n)
 {
   char *ring_buf[n];
   int i;
