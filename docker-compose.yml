@@ -1,0 +1,9 @@
+---
+version: "3"
+services:
+  xinetd:
+    build: "./docker/xinetd"
+    tty: true # @see https://serverfault.com/questions/661509/docker-container-exits-without-any-message/661608#661608 bug
+    ports:
+      - "7:7"
+      - "13:13"
